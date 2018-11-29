@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+// services
+import { NewReleasesSpotifyService } from '../../services/new-releases-spotify.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,7 +9,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor( private _newReleasesSpotifyService: NewReleasesSpotifyService ) { 
+    this._newReleasesSpotifyService.getNewReleases();
+  }
 
   ngOnInit() {
   }
