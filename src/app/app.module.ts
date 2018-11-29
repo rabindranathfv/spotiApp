@@ -10,12 +10,16 @@ import { NewReleasesSpotifyService } from './services/new-releases-spotify.servi
 
 // pipes
 
+// npm packages
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+
 // components
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { SearchComponent } from './components/search/search.component';
 import { ArtistComponent } from './components/artist/artist.component';
 import { NavbarComponent } from './components/share/navbar/navbar.component';
+import { CardSpotifyComponent } from './components/card-spotify/card-spotify.component';
 
 @NgModule({
   declarations: [
@@ -23,13 +27,15 @@ import { NavbarComponent } from './components/share/navbar/navbar.component';
     HomeComponent,
     SearchComponent,
     ArtistComponent,
-    NavbarComponent
+    NavbarComponent,
+    CardSpotifyComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AngularFontAwesomeModule
   ],
   providers: [
     NewReleasesSpotifyService

@@ -1,0 +1,15 @@
+<div class="card">
+    <img class="card-img-top" [src]="imgUrl" alt="" [id]="albumId">
+    <div class="card-body">
+        <h5 class="card-title"> {{ albumName }} - Tracks<i class="fas fa-music"> {{ totalTracks }}</i></h5>
+        <p class="card-text">
+            <span *ngFor="let art of artiststArr" class="badge badge-pill badge-primary"> {{ art.name }} </span>
+        </p>
+        <p class="card-text">
+            <span class="badge badge-pill badge-dark">{{ releaseDate | date }}</span>
+        </p>
+    </div>
+    <div class="card-footer">
+        <a type="button" class="btn btn-outline-dark btn-block" [href]="albumHref">Check this Song!!</a>
+    </div>
+</div>
