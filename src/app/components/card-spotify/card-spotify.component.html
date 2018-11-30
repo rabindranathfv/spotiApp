@@ -1,4 +1,4 @@
-<ng-container *ngIf="typeCard == 'album' ; else TemplateArtist">
+<ng-container *ngIf="typeCard == 0 ; else TemplateArtist">
     <div class="card " [id]="albumId">
         <img class="card-img-top" [src]="imgUrl" [alt]="albumName">
         <div class="card-body">
@@ -18,7 +18,7 @@
 </ng-container>
 <ng-template #TemplateArtist>
     <div class="card" [id]="artistId">
-        <img class="card-img-top" [src]="imgUrlArt" [alt]="artistName">
+        <img class="card-img-top" [src]="imgUrl" [alt]="artistName">
         <div class="card-body">
             <h5 class="card-title text-center"> {{ artistName }}</h5>
             <p class="card-text ">

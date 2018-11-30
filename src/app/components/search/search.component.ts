@@ -9,6 +9,7 @@ export class SearchComponent implements OnInit {
 
   artistList: any[] = [];
   constructor( private _newReleasesSpotifyService: NewReleasesSpotifyService ) {
+    console.log(this.artistList);
   }
 
   ngOnInit() {
@@ -18,9 +19,10 @@ export class SearchComponent implements OnInit {
     if (searchTerm.length > 0) {
       console.log(searchTerm);
       this._newReleasesSpotifyService.getArtist(searchTerm)
-        .subscribe( (resp) => {
-          console.log(resp.artists.items);
-          this.artistList = resp.artists.items;
+        .subscribe( (resp: any) => {
+          // console.log(resp.artists.items);
+          // this.artistList = resp.artists.items;
+          this.artistList = resp;
         });
     }
   }

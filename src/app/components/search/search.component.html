@@ -8,5 +8,6 @@
 <hr class="divider">
 
 <div class="card-columns m-3">
-    <app-card-spotify [typeCard]="artist" [artistsList]="artist" [imgUrlArt]="artist.images[0].url" [popularity]="artist.popularity" [artistId]="artist.id" [artistName]="artist.name" [followers]="artist.followers.total" [artistGenres]="artist.genres" *ngFor="let artist of artistList"></app-card-spotify>
+    <!-- typeCard 1 for a Search -->
+    <app-card-spotify [typeCard]="1" [artistsList]="artist" [imgUrl]="artist.images[0].url" [popularity]="artist.popularity" [artistId]="artist.id" [artistName]="artist.name" [followers]="artist.followers.total" [artistGenres]="artist.genres" *ngFor="let artist of artistList"></app-card-spotify>
 </div>

@@ -19,7 +19,6 @@ export class CardSpotifyComponent implements OnInit {
   @Input() albumId: string;
 
   @Input() artistsList: any[] = [];
-  @Input() imgUrlArt: any;
   @Input() artistId: string;
   @Input() popularity: number;
   @Input() artistName: any;

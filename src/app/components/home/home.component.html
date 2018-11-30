@@ -3,6 +3,7 @@
 <hr class="divider">
 
 <div class="card-columns">
-    <app-card-spotify [typeCard]="album" [album]="album" [imgUrl]="album.images[0].url" [albumName]="album.name" [artiststArr]="album.artists" [albumHref]="album.href" [totalTracks]="album.total_tracks" [releaseDate]="album.release_date" [albumId]="album.id"
+    <!-- typeCard 0 is for Home card -->
+    <app-card-spotify [typeCard]="0" [album]="album" [imgUrl]="album.images[0].url" [albumName]="album.name" [artiststArr]="album.artists" [albumHref]="album.href" [totalTracks]="album.total_tracks" [releaseDate]="album.release_date" [albumId]="album.id"
         *ngFor="let album of newReleasesList"></app-card-spotify>
 </div>
