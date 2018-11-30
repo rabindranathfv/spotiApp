@@ -8,14 +8,16 @@ import { NewReleasesSpotifyService } from '../../services/new-releases-spotify.s
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  
   newReleasesList: any[] = [];
-  constructor( private _newReleasesSpotifyService: NewReleasesSpotifyService ) { 
+  loading: boolean;
+  constructor( private _newReleasesSpotifyService: NewReleasesSpotifyService ) {
+    this.loading = true;
     this._newReleasesSpotifyService.getNewReleases()
       .subscribe( (resp: any) => {
-        console.log(resp);
+        // console.log(resp);
         // this.newReleasesList = resp.albums.items;
         this.newReleasesList = resp;
+        this.loading = false;
       });
   }
 

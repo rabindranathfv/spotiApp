@@ -8,6 +8,7 @@ import { NewReleasesSpotifyService } from '../../services/new-releases-spotify.s
 export class SearchComponent implements OnInit {
 
   artistList: any[] = [];
+  loading: boolean;
   constructor( private _newReleasesSpotifyService: NewReleasesSpotifyService ) {
     console.log(this.artistList);
   }
@@ -17,12 +18,14 @@ export class SearchComponent implements OnInit {
 
   findByArtist(searchTerm: string) {
     if (searchTerm.length > 0) {
+      this.loading = true;
       console.log(searchTerm);
       this._newReleasesSpotifyService.getArtist(searchTerm)
         .subscribe( (resp: any) => {
           // console.log(resp.artists.items);
           // this.artistList = resp.artists.items;
           this.artistList = resp;
+          this.loading = false;
         });
     }
   }

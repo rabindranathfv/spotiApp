@@ -12,7 +12,7 @@ export class NewReleasesSpotifyService {
 
   getQuery( query: string) {
     const headers = new HttpHeaders({
-      'Authorization': 'Bearer BQDYzxZCCsjqhv4IdM3yChdTtkL4UMsaFBdJZuniOlM2BaMR967qkvFUELxY480ZB0Ir5YN_DstyM6m6ZnY'
+      'Authorization': 'Bearer BQC0ahQnoFP_wBPdTt__PBJy5J5-skZX0kCeh3_9fAtTEilw9vUY6gSe25BNMRpqLkvnyqW5kWkC_9fVIow'
     });
     const apiUrl = `https://api.spotify.com/v1/${ query }`;
     return this.http.get(apiUrl, { headers });

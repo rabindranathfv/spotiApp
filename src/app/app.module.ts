@@ -21,6 +21,7 @@ import { ArtistComponent } from './components/artist/artist.component';
 import { NavbarComponent } from './components/share/navbar/navbar.component';
 import { CardSpotifyComponent } from './components/card-spotify/card-spotify.component';
 import { NoImagePipe } from './pipes/no-image.pipe';
+import { LoadingComponent } from './components/share/loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { NoImagePipe } from './pipes/no-image.pipe';
     ArtistComponent,
     NavbarComponent,
     CardSpotifyComponent,
-    NoImagePipe
+    NoImagePipe,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

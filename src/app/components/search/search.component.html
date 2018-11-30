@@ -7,7 +7,9 @@
 
 <hr class="divider">
 
-<div class="card-columns m-3">
+<app-loading *ngIf="loading"></app-loading>
+
+<div class="card-columns m-3" *ngIf="!loading">
     <!-- typeCard 1 for a Search -->
     <app-card-spotify [typeCard]="1" [artistsList]="artist" [imgUrl]="artist.images | noImage" [popularity]="artist.popularity" [artistId]="artist.id" [artistName]="artist.name" [followers]="artist.followers.total" [artistGenres]="artist.genres" *ngFor="let artist of artistList"></app-card-spotify>
 </div>
