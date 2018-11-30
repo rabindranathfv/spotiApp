@@ -20,6 +20,7 @@ import { SearchComponent } from './components/search/search.component';
 import { ArtistComponent } from './components/artist/artist.component';
 import { NavbarComponent } from './components/share/navbar/navbar.component';
 import { CardSpotifyComponent } from './components/card-spotify/card-spotify.component';
+import { NoImagePipe } from './pipes/no-image.pipe';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CardSpotifyComponent } from './components/card-spotify/card-spotify.com
     SearchComponent,
     ArtistComponent,
     NavbarComponent,
-    CardSpotifyComponent
+    CardSpotifyComponent,
+    NoImagePipe
   ],
   imports: [
     BrowserModule,
