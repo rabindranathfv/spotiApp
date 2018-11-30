@@ -1,15 +1,37 @@
-<div class="card">
-    <img class="card-img-top" [src]="imgUrl" alt="albumName" [id]="albumId">
-    <div class="card-body">
-        <h5 class="card-title text-center"> {{ albumName }}</h5>
-        <p class="card-text">
-            <span *ngFor="let art of artiststArr" class="badge badge-pill badge-primary"> {{ art.name }} </span>
-        </p>
-        <p class="card-text">
-            <span class="badge badge-pill badge-dark">{{ releaseDate | date }} <i class="fas fa-music"> {{ totalTracks }}</i></span>
-        </p>
+<ng-container *ngIf="typeCard == 'album' ; else TemplateArtist">
+    <div class="card " [id]="albumId">
+        <img class="card-img-top" [src]="imgUrl" [alt]="albumName">
+        <div class="card-body">
+            <h5 class="card-title text-center"> {{ albumName }}</h5>
+            <p class="card-text ">
+                <span *ngFor="let art of artiststArr" class="badge badge-pill badge-primary "> {{ art.name }} </span>
+            </p>
+            <p class="card-text">
+                <span class="badge badge-pill badge-dark">{{ releaseDate | date }} <i class="fas fa-music"> {{ totalTracks }}</i></span>
+            </p>
+        </div>
+        <div class="card-footer black-card-footer">
+            <a type="button " class="btn btn-block btn-details" [href]="albumHref ">Check this Song!!</a>
+        </div>
     </div>
-    <div class="card-footer black-card-footer">
-        <a type="button" class="btn btn-block btn-details" [href]="albumHref">Check this Song!!</a>
+
+</ng-container>
+<ng-template #TemplateArtist>
+    <div class="card" [id]="artistId">
+        <img class="card-img-top" [src]="imgUrlArt" [alt]="artistName">
+        <div class="card-body">
+            <h5 class="card-title text-center"> {{ artistName }}</h5>
+            <p class="card-text ">
+                <span *ngFor="let gen of artistGenres" class="badge badge-pill badge-primary "> {{ gen }} </span>
+            </p>
+            <p class="card-text">
+                <span class="badge badge-pill badge-dark"> <i class="fas fa-music"> Popularity {{ popularity }}</i></span>
+                <span class="badge badge-pill badge-dark"> <i class="fas fa-users"> Followers {{ followers }}</i></span>
+            </p>
+        </div>
+        <div class="card-footer black-card-footer">
+            <a type="button" class="btn btn-block btn-details" href="">Check more about this Artist!!</a>
+        </div>
     </div>
-</div>
+
+</ng-template>

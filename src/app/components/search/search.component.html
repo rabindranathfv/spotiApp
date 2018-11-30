@@ -1,3 +1,12 @@
-<p>
-  search works!
-</p>
+<div class="row m-4">
+    <div class="col">
+        <label for="" class="">Search By Artist</label>
+        <input #searchTerm name="" id="" (keyup)="findByArtist(searchTerm.value)" class="form-control" type="text" value="" placeholder="Enter a name of an Artist for search coincidences">
+    </div>
+</div>
+
+<hr class="divider">
+
+<div class="card-columns m-3">
+    <app-card-spotify [typeCard]="artist" [artistsList]="artist" [imgUrlArt]="artist.images[0].url" [popularity]="artist.popularity" [artistId]="artist.id" [artistName]="artist.name" [followers]="artist.followers.total" [artistGenres]="artist.genres" *ngFor="let artist of artistList"></app-card-spotify>
+</div>
