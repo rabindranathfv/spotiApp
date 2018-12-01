@@ -1,3 +1,21 @@
-<p>
-  artist works!
-</p>
+<app-loading *ngIf="loading"></app-loading>
+
+<div class="row m-5">
+    <div class="col-2">
+        <img [src]="artistData.images | noImage" class="img-circle img-thumbnail" [alt]="artistData.name">
+    </div>
+    <div class="col">
+        <h3>{{ artistData.name }}</h3>
+        <p class="card-text">
+            <span class="badge badge-pill badge-dark"> <i class="fas fa-music"> Popularity {{ artistData.popularity }}</i></span>
+            <span class="badge badge-pill badge-dark"> <i class="fas fa-users"> Followers {{ artistData.followers.total }}</i></span>
+
+        </p>
+        <p class="card-text">
+            <a href="artistData.external_urls.spotify" target="_blank">More info of this Artist</a>
+        </p>
+    </div>
+    <div class="col-4 text-right">
+        <button class="btn btn-outline-danger" href="" [routerLink]="['search']">Back</button>
+    </div>
+</div>

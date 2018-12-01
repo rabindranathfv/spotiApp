@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card-spotify',
@@ -26,20 +27,20 @@ export class CardSpotifyComponent implements OnInit {
   @Input() artistGenres: any[];
 
 
-  constructor(  ) {  }
+  constructor( private router: Router ) {  }
 
   ngOnInit() {
   }
 
   getArtistId( data: any) {
-    let artistID;
+    let artistId;
     if ( data.type === 'artist') {
-      artistID = data.id;
+      artistId = data.id;
     } else {
-      artistID = data.artists[0].id;
+      artistId = data.artists[0].id;
     }
-
-    console.log(artistID);
+    this.router.navigate(['artist', artistId]);
+    // console.log(artistId);
   }
 
 }
