@@ -5,7 +5,7 @@
 <hr class="divider">
 
 <div class="card-columns">
-    <!-- typeCard 0 is for Home card -->
-    <app-card-spotify [typeCard]="0" [album]="album" [imgUrl]="album.images | noImage" [albumName]="album.name" [artiststArr]="album.artists" [albumHref]="album.href" [totalTracks]="album.total_tracks" [releaseDate]="album.release_date" [albumId]="album.id"
-        *ngFor="let album of newReleasesList"></app-card-spotify>
+    <!-- typeCard album is for Home card -->
+    <app-card-spotify [typeCard]="album.type" [album]="album" [artistId]="album.artists[0].id" [imgUrl]="album.images | noImage" [albumName]="album.name" [artiststArr]="album.artists" [albumHref]="album.href" [totalTracks]="album.total_tracks" [releaseDate]="album.release_date"
+        [albumId]="album.id" *ngFor="let album of newReleasesList"></app-card-spotify>
 </div>

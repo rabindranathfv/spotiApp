@@ -1,6 +1,7 @@
-<ng-container *ngIf="typeCard == 0 ; else TemplateArtist">
-    <div class="card " [id]="albumId">
-        <img class="card-img-top" [src]="imgUrl" [alt]="albumName">
+<!-- album typeCard album -->
+<ng-container *ngIf="typeCard === 'album' ; else TemplateArtist">
+    <div class="card puntero" [id]="albumId" (click)="getArtistId( album )">
+        <img class="card-img-top" [src]="imgUrl" [alt]="artistId">
         <div class="card-body">
             <h5 class="card-title text-center"> {{ albumName }}</h5>
             <p class="card-text ">
@@ -17,7 +18,7 @@
 
 </ng-container>
 <ng-template #TemplateArtist>
-    <div class="card" [id]="artistId">
+    <div class="card puntero" [id]="artistId" (click)="getArtistId( artistsList )">
         <img class="card-img-top" [src]="imgUrl" [alt]="artistName">
         <div class="card-body">
             <h5 class="card-title text-center"> {{ artistName }}</h5>
@@ -28,9 +29,6 @@
                 <span class="badge badge-pill badge-dark"> <i class="fas fa-music"> Popularity {{ popularity }}</i></span>
                 <span class="badge badge-pill badge-dark"> <i class="fas fa-users"> Followers {{ followers }}</i></span>
             </p>
-        </div>
-        <div class="card-footer black-card-footer">
-            <a type="button" class="btn btn-block btn-details" href="">Check more about this Artist!!</a>
         </div>
     </div>
 

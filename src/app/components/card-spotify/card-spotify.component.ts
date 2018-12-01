@@ -31,4 +31,15 @@ export class CardSpotifyComponent implements OnInit {
   ngOnInit() {
   }
 
+  getArtistId( data: any) {
+    let artistID;
+    if ( data.type === 'artist') {
+      artistID = data.id;
+    } else {
+      artistID = data.artists[0].id;
+    }
+
+    console.log(artistID);
+  }
+
 }
