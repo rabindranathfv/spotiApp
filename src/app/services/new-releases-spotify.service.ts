@@ -11,6 +11,10 @@ export class NewReleasesSpotifyService {
   constructor( private http: HttpClient  ) { }
 
   getQuery( query: string) {
+    // https://accounts.spotify.com/api/token with this paremeters in body section
+    // grant_type: client_credentials
+    // client_id: cliendId (spotify give to me)
+    // client_secret: clientSecret (spotify give to me)
     const headers = new HttpHeaders({
       'Authorization': 'Bearer BQCxUOg1aiONT8QtM88mTxL2hSwgAGYT49EarQAP1g89VlIgOflzQpB2WNbhqM4mQeqvXwRQAYUoju3Usks'
     });
