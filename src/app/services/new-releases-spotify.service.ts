@@ -31,7 +31,6 @@ export class NewReleasesSpotifyService {
   }
 
   getTopTracks( id: string): any {
-    return this.getQuery(`artists/${ id }/top-tracks?country=ES`);
-  }
+    return this.getQuery(`artists/${ id }/top-tracks?country=ES`).pipe( map( (resp: any) => resp.tracks ));  }
 
 }

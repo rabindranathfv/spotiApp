@@ -22,18 +22,17 @@ export class ArtistComponent implements OnInit {
       this.getTopTracksByArtist( params['id'] );
       this.loading = false;
     });
-    
    }
 
   ngOnInit() {
   }
 
-  getArtistById( id: string) {
+  getArtistById( id: string): any {
     return this._newReleasesSpotifyService.getArtistDetails( id ).subscribe( (artist: any) => this.artistData = artist );
   }
 
-  getTopTracksByArtist( id: string ) {
-    return this._newReleasesSpotifyService.getTopTracks( id ).subscribe( (tracks) => {
+  getTopTracksByArtist( id: string ): any {
+    return this._newReleasesSpotifyService.getTopTracks( id ).subscribe( (tracks: any) => {
         console.log(tracks);
         this.topTracksList = tracks;
     });
