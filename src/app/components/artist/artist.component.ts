@@ -11,6 +11,7 @@ import { NewReleasesSpotifyService } from '../../services/new-releases-spotify.s
 })
 export class ArtistComponent implements OnInit {
   artistData: any = {};
+  topTracksList: any[] = [];
   loading: boolean;
   constructor( private activatedRoute: ActivatedRoute,
                public _newReleasesSpotifyService: NewReleasesSpotifyService
@@ -18,8 +19,10 @@ export class ArtistComponent implements OnInit {
     this.loading = true;
     this.activatedRoute.params.subscribe( (params: any) => {
       this.getArtistById( params['id'] );
+      this.getTopTracksByArtist( params['id'] );
       this.loading = false;
     });
+    
    }
 
   ngOnInit() {
@@ -27,5 +30,12 @@ export class ArtistComponent implements OnInit {
 
   getArtistById( id: string) {
     return this._newReleasesSpotifyService.getArtistDetails( id ).subscribe( (artist: any) => this.artistData = artist );
+  }
+
+  getTopTracksByArtist( id: string ) {
+    return this._newReleasesSpotifyService.getTopTracks( id ).subscribe( (tracks) => {
+        console.log(tracks);
+        this.topTracksList = tracks;
+    });
   }
 }
