@@ -22,6 +22,7 @@ import { NavbarComponent } from './components/share/navbar/navbar.component';
 import { CardSpotifyComponent } from './components/card-spotify/card-spotify.component';
 import { NoImagePipe } from './pipes/no-image.pipe';
 import { LoadingComponent } from './components/share/loading/loading.component';
+import { SafeDomPipe } from './pipes/safe-dom.pipe';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { LoadingComponent } from './components/share/loading/loading.component';
     NavbarComponent,
     CardSpotifyComponent,
     NoImagePipe,
-    LoadingComponent
+    LoadingComponent,
+    SafeDomPipe
   ],
   imports: [
     BrowserModule,
